@@ -1,0 +1,101 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f1f8ff; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+  }
+  
+
+  #app {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  input, textarea {
+    margin: 12px 0;
+    padding: 12px;
+    width: 90%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  
+  input:focus, textarea:focus {
+    border-color: #007bff; 
+  }
+  
+  
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+ 
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  #entryHolder {
+    margin-top: 30px;
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  #entryHolder div {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  
+  h1 {
+    font-size: 36px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  
+  h3 {
+    color: #444;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  
+  @media (max-width: 600px) {
+    input, textarea {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+}
