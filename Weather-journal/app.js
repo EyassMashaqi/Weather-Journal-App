@@ -1,4 +1,4 @@
-const apiKey = "479a7df16bd282b5d0fa674163c74550&units=metric";
+const apiKey = "479a7df16bd282b5d0fa674163c74550&units=inperial";
 
 // Function to fetch the data from the server
 const retrieveData = async () => {
