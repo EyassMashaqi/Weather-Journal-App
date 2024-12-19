@@ -1,15 +1,15 @@
-const apiKey = "479a7df16bd282b5d0fa674163c74550"; 
+const apiKey = "479a7df16bd282b5d0fa674163c74550";
 
+// Function to fetch the data from the server
 const retrieveData = async () => {
   try {
-    const request = await fetch("http://localhost:8000/all"); 
+    const request = await fetch("http://localhost:8000/all");
     if (!request.ok) throw new Error("Failed to retrieve data.");
     const allData = await request.json();
     console.log(allData);
 
-    
-    document.getElementById("temp").innerHTML =
-      Math.round(allData.temp) + "°C";  
+    // Update the UI with the retrieved data
+    document.getElementById("temp").innerHTML = Math.round(allData.temp) + "°C";
     document.getElementById("content").innerHTML = allData.feel;
     document.getElementById("date").innerHTML = allData.date;
   } catch (error) {
@@ -18,6 +18,7 @@ const retrieveData = async () => {
   }
 };
 
+// Function to post data to the server
 const postData = async (url = "", data = {}) => {
   const response = await fetch(url, {
     method: "POST",
@@ -32,7 +33,7 @@ const postData = async (url = "", data = {}) => {
   }
 };
 
-
+// Event listener for 'Generate' button to fetch weather data and save it to the server
 document.getElementById("generate").addEventListener("click", async () => {
   const zip = document.getElementById("zip").value;
   const feelings = document.getElementById("feelings").value;
@@ -50,11 +51,12 @@ document.getElementById("generate").addEventListener("click", async () => {
     }
 
     const weatherData = await response.json();
-    const temp = weatherData.main.temp; 
+    const temp = weatherData.main.temp;  // Convert the temperature from Kelvin to Celsius
     const date = new Date().toLocaleDateString();
 
+    // Save the data to the server
     await postData("http://localhost:8000/add", { temp, date, feel: feelings });
-    retrieveData();
+    retrieveData();  // Fetch the updated data
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }
